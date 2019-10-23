@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
     private fun createView() {
         val flutterView: FlutterView = Flutter.createView(this, lifecycle, "route1")
         val layout =
-            FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, 800)
+                FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, 800)
         flContainer.addView(flutterView, layout)
     }
 
     private fun createFragment() {
         supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.flContainer, Flutter.createFragment("route1"))
-            .commit()
+                .beginTransaction()
+                .replace(R.id.flContainer, Flutter.createFragment(null))
+                .commit()
     }
 }
